@@ -127,7 +127,7 @@ void releaseResources(int process_id, int release[resourcesNumber]) {
 }
 
 int main() {
-    // Calculate need matrix
+    // calculate need matrix
     for (int i = 0; i < processesNumber; ++i) {
         for (int j = 0; j < resourcesNumber; ++j) {
             need[i][j] = maxClaim[i][j] - allocation[i][j];
@@ -148,7 +148,9 @@ int main() {
 
         if (process_id < 0 || process_id >= processesNumber) {
             printf("?invalid process ID, please try again.\n");
-            continue; // Skip the rest of the loop iteration if the process ID is invalid
+
+            // skip the rest of the loop iteration if the process ID is invalid
+            continue; 
         }
 
         printf("• enter resource request (format: x y z): ");
@@ -156,7 +158,7 @@ int main() {
             scanf("%d", &request[i]);
         }
         
-        // Check and request resources only if the input request is non-zero
+        // check and request resources only if the input request is not 0
         bool isRequestNonZero = false;
         for (int i = 0; i < resourcesNumber; ++i) {
             if (request[i] > 0) {
@@ -174,7 +176,7 @@ int main() {
             scanf("%d", &release[i]);
         }
         
-        // Perform release operation
+        // perform release operation
         releaseResources(process_id, release);
     }
 
