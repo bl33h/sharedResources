@@ -6,7 +6,6 @@ FileName: deadlock.cpp
 Creation: 11/03/2024
 Last modification: 12/03/2024
 ------------------------------------------------------------------------------*/
-
 #include <iostream>
 #include <thread>
 #include <mutex>
