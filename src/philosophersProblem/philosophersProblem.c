@@ -65,6 +65,7 @@ void placeFork(int phnum) {
     printf("~ philosopher no. %d is placing fork [%d] and [%d] down\n", phnum + 1, (phnum + 4) % N + 1, phnum + 1);
     printf("philosopher no. %d is thinking...\n", phnum + 1);
 	sleep(1 + rand() % 3);
+    
 	// left neighbor can eat checker
     checkAndEat((phnum + 4) % N); 
 
